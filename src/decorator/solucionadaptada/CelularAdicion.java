@@ -1,4 +1,4 @@
-package decorator.solucion;
+package decorator.solucionadaptada;
 
 /**
  * Permite extender las características de un celular base.
