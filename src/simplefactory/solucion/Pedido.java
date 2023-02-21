@@ -1,33 +1,24 @@
-package simplefactory.inicial;
+package simplefactory.solucion;
 
 /**
  * Permite obtener los datos de un pedido de un juguete,
  * especialmente el precio, necesario para el área de Mercadeo.
  * 
- * ESTA CLASE DEBE CONOCER LAS CLASES HIJAS DE JUGUETE,
- * CREANDO ALTO ACOMPLAMIENTO
+ * ESTA CLASE NO TIENE QUE CONOCER LAS CLASES HIJAS DE JUGUETE,
+ * CUMPLIENDO CON "DEPENDENCY INVERSION"
  * 
- * @version 1.0
+ * @version 2.0
  */
 public class Pedido {
 	
 	private Juguete juguete;
 
 	/**
-	 * Crea un juguete para calcular el valor del pedido.
-	 * 
-	 * SE DEBE MODIFICAR ESTE MÉTODO SI APARECEN
-	 * NUEVOS JUGUETES
+	 * Crea un juguete para calcular el valor del pedido,
+	 * USANDO LA FÁBRICA (el método estático).
 	 */
 	public void adicionarJuguete(double precioBase, double volumen, char tipo) {
-		switch (tipo) {
-			case 'p': 
-				this.juguete = new Peluche(precioBase, volumen);
-				break;
-			case 'b':
-				this.juguete = new Balon(precioBase, volumen);
-				break;
-		}		
+		this.juguete = FabricaJuguetes.crearJuguete(precioBase, volumen, tipo);
 	}
 	
 	/**
