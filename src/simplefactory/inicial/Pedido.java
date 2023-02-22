@@ -27,6 +27,8 @@ public class Pedido {
 			case 'b':
 				this.juguete = new Balon(precioBase, volumen);
 				break;
+			default:
+				throw new IllegalArgumentException();
 		}		
 	}
 	

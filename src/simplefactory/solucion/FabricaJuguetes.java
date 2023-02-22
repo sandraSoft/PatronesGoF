@@ -23,7 +23,7 @@ public class FabricaJuguetes {
 			case 'b':
 				return new Balon(precioBase, volumen);
 			default:
-				return null;
+				throw new IllegalArgumentException();
 		}
 	}
 }
