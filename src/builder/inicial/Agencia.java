@@ -25,7 +25,7 @@ public class Agencia {
 	 * 			(la clave es el nombre del atributo).
 	 * @param extras una lista de cadenas con los elementos extra del auto.
 	 */
-	public void addAuto(Map<String, String> datosAuto, List<String> extras) {
+	public void adicionarAuto(Map<String, String> datosAuto, List<String> extras) {
 		Auto autoNuevo;
 		String placa = datosAuto.get("placa");
 		String marca = datosAuto.get("marca");

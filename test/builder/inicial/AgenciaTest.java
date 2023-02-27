@@ -19,7 +19,7 @@ class AgenciaTest {
 		datosAuto.put("largo", "3100");
 		
 		Agencia agencia = new Agencia();
-		agencia.addAuto(datosAuto, null);
+		agencia.adicionarAuto(datosAuto, null);
 		Auto auto = agencia.buscarAuto(placa);
 		
 		assertEquals(placa,auto.getPlaca());
