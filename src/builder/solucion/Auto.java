@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Un vehículo que tiene varias características,
  * algunas opcionales, por lo que define una clase interna
- * que será el constructor (patrón BUILDER).
+ * que será el constructor (patrón FLUENT BUILDER).
  * 
  * @version 2.0
  */
@@ -21,14 +21,15 @@ public class Auto {
 	private int ancho;
 	private List<String> extras;
 	
-	public Auto(String placa, String marca) {
+	// El constructor solo puede ser usado por el Builder, por ser privado
+	private Auto(String placa, String marca) {
 		this.placa = placa;
 		this.marca = marca;
 		this.extras = new ArrayList<>();
 	}
 	
-	public static Builder constructor(String placa, String marca) {
-		return new Builder(placa, marca);
+	public static AutoBuilder constructor(String placa, String marca) {
+		return new AutoBuilder(placa, marca);
 	}
 
 	public void setTipo(String tipo) {
@@ -95,44 +96,48 @@ public class Auto {
 		return extras;
 	}
 	
-	public static class Builder {
+	/**
+	 * Constructor de autos, usando el patrón FLUENT BUILDER. 
+	 * @version 2.0
+	 */
+	public static class AutoBuilder {
 		private Auto auto;
 		
-		public Builder(String placa, String marca) {
+		public AutoBuilder(String placa, String marca) {
 			auto = new Auto(placa,marca);
 		}
 		
-		public Builder tipo(String tipo) {
-			auto.setTipo(tipo);
+		public AutoBuilder tipo(String tipo) {
+			auto.tipo = tipo;
 			return this;
 		}
 		
-		public Builder tipoBateria(String tipoBateria) {
-			auto.setTipoBateria(tipoBateria);
+		public AutoBuilder tipoBateria(String tipoBateria) {
+			auto.tipoBateria = tipoBateria;
 			return this;
 		}
 		
-		public Builder asientos(int asientos) {
-			auto.setAsientos(asientos);
+		public AutoBuilder asientos(int asientos) {
+			auto.asientos = asientos;
 			return this;
 		}
 		
-		public Builder potenciaMotor(int potenciaMotor) {
-			auto.setPotenciaMotor(potenciaMotor);
+		public AutoBuilder potenciaMotor(int potenciaMotor) {
+			auto.potenciaMotor = potenciaMotor;
 			return this;
 		}
 		
-		public Builder largo(int largo) {
-			auto.setLargo(largo);
+		public AutoBuilder largo(int largo) {
+			auto.largo = largo;
 			return this;
 		}
 		
-		public Builder ancho(int ancho) {
-			auto.setAncho(ancho);
+		public AutoBuilder ancho(int ancho) {
+			auto.ancho = ancho;
 			return this;
 		}
 		
-        public Builder extra(String extra) {
+        public AutoBuilder extra(String extra) {
             auto.extras.add(extra);
             return this;
         }
@@ -141,5 +146,4 @@ public class Auto {
         	return auto;
         }
 	}
-	
 }

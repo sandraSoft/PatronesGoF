@@ -19,7 +19,7 @@ public class Agencia {
 
 
 	/**
-	 * Adiciona un auto, pero primero debe crearlo usando el constructor (Builder).
+	 * Adiciona un auto, pero primero debe crearlo usando el Builder.
 	 * 
 	 * @param datosAuto un map con los valores para los atributos del auto
 	 * 			(la clave es el nombre del atributo).
@@ -29,7 +29,7 @@ public class Agencia {
 		String placa = datosAuto.get("placa");
 		String marca = datosAuto.get("marca");
 		
-		Auto.Builder constructor = Auto.constructor(placa, marca);
+		Auto.AutoBuilder constructor = Auto.constructor(placa, marca);
 		
 		// Adiciona solo los atributos de los que se tenga valor.
 		if (datosAuto.containsKey("tipo")) {

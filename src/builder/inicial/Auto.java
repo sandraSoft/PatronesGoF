@@ -26,8 +26,10 @@ public class Auto {
 		this.extras = new ArrayList<>();
 	}
 	
-	public Auto(String placa, String marca, String tipo, String tipoBateria, int asientos,
-			int potenciaMotor, int largo, int ancho, List<String> extras) {
+	// Este constructor tiene muchos parámetros, lo cual no es recomendado
+	public Auto(String placa, String marca, String tipo, String tipoBateria, 
+			int asientos, int potenciaMotor, int largo, int ancho, 
+			List<String> extras) {
 		this(placa, marca);
 		this.tipo = tipo;
 		this.tipoBateria = tipoBateria;
@@ -41,10 +43,11 @@ public class Auto {
 	public Auto(String placa, String marca, String tipo) {
 		this(placa, marca);
 		this.tipo = tipo;
+		this.extras = new ArrayList<>();
 	}
 
 	public Auto(String placa, String marca, String tipo, int asientos, int potenciaMotor) {
-		this(placa, marca, tipo, null, asientos, potenciaMotor, 0, 0, null);
+		this(placa, marca, tipo, null, asientos, potenciaMotor, 0, 0, new ArrayList<>());
 	}
 
 	public void setTipo(String tipo) {
