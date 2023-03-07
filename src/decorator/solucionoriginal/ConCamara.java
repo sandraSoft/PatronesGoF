@@ -2,8 +2,7 @@ package decorator.solucionoriginal;
 
 /**
  * Un tipo de adición o característica de un celular.
- * Cambiar la forma de calcular el valor,
- * a partir del precio base.
+ * Cambiar la forma de calcular el valor, a partir del precio base.
  * Es un decorador concreto (patrón DECORATOR).
  * 
  * @version 1.0

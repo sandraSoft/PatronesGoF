@@ -5,7 +5,7 @@ package decorator.solucionoriginal;
  * 
  * La forma de calcular el precio puede cambiar si se adicionan
  * condiciones o características al celular, para lo cual se usará
- * el patrón DECORATOR (esta clase corresponde al "Component").
+ * el patrón DECORATOR (esta interfaz corresponde al "Component").
  * 
  * @version 2.0
  */
