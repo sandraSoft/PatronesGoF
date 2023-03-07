@@ -8,9 +8,9 @@ package decorator.solucionoriginal;
  * 
  * @version 1.0
  */
-public class Camara extends Adicional {
+public class ConCamara extends Adicional {
 
-	public Camara(Celular base) {
+	public ConCamara(Celular base) {
 		super(base);
 	}
 	

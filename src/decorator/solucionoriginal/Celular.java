@@ -9,7 +9,7 @@ package decorator.solucionoriginal;
  * 
  * @version 2.0
  */
-public abstract class Celular {
+public interface Celular {
 	
 	/**
 	 * El precio depende de varios factores, pues las 

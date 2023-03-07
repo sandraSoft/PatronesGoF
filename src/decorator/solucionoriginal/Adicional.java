@@ -6,11 +6,11 @@ package decorator.solucionoriginal;
  * 
  * @version 1.0
  */
-public abstract class Adicional extends Celular {
+public abstract class Adicional implements Celular {
 	
 	private Celular base;
 	
-	public Adicional(Celular base) {
+	Adicional(Celular base) {
 		this.base = base;
 	}
 	

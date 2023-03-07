@@ -25,7 +25,7 @@ class CatalogoTest {
 		catalogo.adicionarCelular(
 				new Usado(new CelularBase("Moto",256)));
 		catalogo.adicionarCelular(
-				new Camara(new CelularBase("Samsung",128)));
+				new ConCamara(new CelularBase("Samsung",128)));
 		
 		double precioTotal = catalogo.getPrecioTotalCatalogo();
 		assertEquals(1995120,precioTotal);

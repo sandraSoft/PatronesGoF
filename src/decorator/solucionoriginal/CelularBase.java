@@ -7,7 +7,7 @@ package decorator.solucionoriginal;
  * 
  * @version 1.5
  */
-public class CelularBase extends Celular {
+public class CelularBase implements Celular {
 	
 	private String modelo;
 	private int memoria;
