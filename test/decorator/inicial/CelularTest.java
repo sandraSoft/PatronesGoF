@@ -24,25 +24,21 @@ class CelularTest {
 	
 //	@Test
 //	void testCelularUsado() {
-//		Celular celularBase = new Celular("moto",256);
-//		CelularUsado celularUsado = new CelularUsado(celularBase);
+//		Celular celularUsado = new Usado(new CelularBase("moto",256));
 //		double precioEsperado = 403600;
 //		assertEquals(precioEsperado,celularUsado.calcularPrecio(),0.001);
 //	}
 //	
 //	@Test
 //	void testCelularConCamara() {
-//		Celular celularBase = new Celular("moto",256);
-//		CelularCamara celularCamara = new CelularCamara(celularBase);
+//		Celular celularCamara = new ConCamara(new CelularBase("moto",256));
 //		double precioEsperado = 968640;
 //		assertEquals(precioEsperado,celularCamara.calcularPrecio());
 //	}
 //	
 //	@Test
 //	void testCelularUsadoConCamara() {
-//		Celular celularBase = new Celular("moto",256);
-//		CelularUsado celularUsado = new CelularUsado(celularBase);
-//		CelularCamara celularCamara = new CelularCamara(celularUsado);
+//		Celular celularCamara = new ConCamara(new Usado(new CelularBase("moto",256)));
 //		double precioEsperado = 484320;
 //		assertEquals(precioEsperado,celularCamara.calcularPrecio());
 //	}
