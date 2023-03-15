@@ -18,60 +18,54 @@ class OperacionBancariaTest {
 	void testRetirarCuentaMenosDelSaldo() {
 		OperacionBancaria banco = new OperacionBancaria();
 		Cuenta cuenta = new Cuenta("123",800000);
-		boolean resultadoEsperado = true;
 		
 		boolean resultadoRetiro = banco.realizarRetiro(cuenta, 600000);
-		assertEquals(resultadoEsperado, resultadoRetiro);
+		assertTrue(resultadoRetiro);
 	}
 
 	@Test
 	void testRetirarCuentaNegativo() {
 		OperacionBancaria banco = new OperacionBancaria();
 		Cuenta cuenta = new Cuenta("456",300000);
-		boolean resultadoEsperado = false;
 		
 		boolean resultadoRetiro = banco.realizarRetiro(cuenta, -40000);
-		assertEquals(resultadoEsperado, resultadoRetiro);
+		assertFalse(resultadoRetiro);
 	}
 
 	@Test
 	void testRetirarCuentaMasDelSaldo() {
 		OperacionBancaria banco = new OperacionBancaria();
 		Cuenta cuenta = new Cuenta("789",500000);
-		boolean resultadoEsperado = false;
 		
 		boolean resultadoRetiro = banco.realizarRetiro(cuenta,700000);
-		assertEquals(resultadoEsperado, resultadoRetiro);
+		assertFalse(resultadoRetiro);
 	}
 	
 	
 //	@Test
 //	void testRetirarTarjetaMenosDelSaldo() {
 //		OperacionBancaria banco = new OperacionBancaria();
-//		TarjetaCredito tarjeta = new TarjetaCredito("123",800000);
-//		boolean resultadoEsperado = true;
+//		Tarjeta tarjeta = new Tarjeta("123",800000);
 //		
 //		boolean resultadoRetiro = banco.realizarRetiro(tarjeta, 600000);
-//		assertEquals(resultadoEsperado, resultadoRetiro);
+//		assertTrue(resultadoRetiro);
 //	}
 //
 //	@Test
 //	void testRetirarTarjetaNegativo() {
 //		OperacionBancaria banco = new OperacionBancaria();
-//		TarjetaCredito tarjeta = new TarjetaCredito("456",300000);
-//		boolean resultadoEsperado = false;
+//		Tarjeta tarjeta = new Tarjeta("456",300000);
 //		
 //		boolean resultadoRetiro = banco.realizarRetiro(tarjeta, -40000);
-//		assertEquals(resultadoEsperado, resultadoRetiro);
+//		assertFalse(resultadoRetiro);
 //	}
 //
 //	@Test
 //	void testRetirarTarjetaMasDelSaldo() {
 //		OperacionBancaria banco = new OperacionBancaria();
-//		TarjetaCredito tarjeta = new TarjetaCredito("789",500000);
-//		boolean resultadoEsperado = false;
+//		Tarjeta tarjeta = new Tarjeta("789",500000);
 //		
 //		boolean resultadoRetiro = banco.realizarRetiro(tarjeta,700000);
-//		assertEquals(resultadoEsperado, resultadoRetiro);
+//		assertFalse(resultadoRetiro);
 //	}
 }

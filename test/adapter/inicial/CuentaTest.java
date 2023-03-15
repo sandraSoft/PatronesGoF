@@ -15,33 +15,30 @@ class CuentaTest {
 	@Test
 	void testRetirarMenosDelSaldo() {
 		Cuenta cuenta = new Cuenta("123",800000);
-		boolean resultadoEsperado = true;
 		double saldoEsperado = 200000;
 		
 		boolean resultadoRetiro = cuenta.retirar(600000);
-		assertEquals(resultadoEsperado, resultadoRetiro);
-		assertEquals(saldoEsperado,cuenta.getSaldo(),0);
+		assertTrue(resultadoRetiro);
+		assertEquals(saldoEsperado,cuenta.getSaldo());
 	}
 
 	@Test
 	void testRetirarNegativo() {
 		Cuenta cuenta = new Cuenta("456",300000);
-		boolean resultadoEsperado = false;
 		double saldoEsperado = 300000;
 		
 		boolean resultadoRetiro = cuenta.retirar(-400000);
-		assertEquals(resultadoEsperado, resultadoRetiro);
-		assertEquals(saldoEsperado,cuenta.getSaldo(),0);
+		assertFalse(resultadoRetiro);
+		assertEquals(saldoEsperado,cuenta.getSaldo());
 	}
 	
 	@Test
 	void testRetirarMasDelSaldo() {
 		Cuenta cuenta = new Cuenta("789",500000);
-		boolean resultadoEsperado = false;
 		double saldoEsperado = 500000;
 		
 		boolean resultadoRetiro = cuenta.retirar(700000);
-		assertEquals(resultadoEsperado, resultadoRetiro);
-		assertEquals(saldoEsperado,cuenta.getSaldo(),0);
+		assertFalse(resultadoRetiro);
+		assertEquals(saldoEsperado,cuenta.getSaldo());
 	}
 }
