@@ -47,7 +47,7 @@ class OperacionBancariaTest {
 	@Test
 	void testRetirarTarjetaMenosDelSaldo() {
 		OperacionBancaria banco = new OperacionBancaria();
-		TarjetaAdapter tarjeta = new TarjetaAdapter("123",800000);
+		TarjetaCuenta tarjeta = new TarjetaCuenta("123",800000);
 		boolean resultadoEsperado = true;
 		
 		boolean resultadoRetiro = banco.realizarRetiro(tarjeta, 600000);
@@ -58,7 +58,7 @@ class OperacionBancariaTest {
 	@Test
 	void testRetirarTarjetaNegativo() {
 		OperacionBancaria banco = new OperacionBancaria();
-		TarjetaAdapter tarjeta = new TarjetaAdapter("456",300000);
+		TarjetaCuenta tarjeta = new TarjetaCuenta("456",300000);
 		boolean resultadoEsperado = false;
 		
 		boolean resultadoRetiro = banco.realizarRetiro(tarjeta, -40000);
@@ -69,7 +69,7 @@ class OperacionBancariaTest {
 	@Test
 	void testRetirarTarjetaMasDelSaldo() {
 		OperacionBancaria banco = new OperacionBancaria();
-		TarjetaAdapter tarjeta = new TarjetaAdapter("789",500000);
+		TarjetaCuenta tarjeta = new TarjetaCuenta("789",500000);
 		boolean resultadoEsperado = false;
 		
 		boolean resultadoRetiro = banco.realizarRetiro(tarjeta,700000);

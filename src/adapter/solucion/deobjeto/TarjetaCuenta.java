@@ -9,11 +9,11 @@ package adapter.solucion.deobjeto;
  * 
  * @version 1.0-objeto
  */
-public class TarjetaAdapter implements ProductoBancario {
+public class TarjetaCuenta implements ProductoBancario {
 	
 	private TarjetaCredito tarjeta;
 
-	public TarjetaAdapter(TarjetaCredito tarjeta) {
+	public TarjetaCuenta(TarjetaCredito tarjeta) {
 		this.tarjeta = tarjeta;
 		
 		// Otra opción es que no reciba como parámetro un objeto tarjeta,

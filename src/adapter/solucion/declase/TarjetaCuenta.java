@@ -9,9 +9,9 @@ package adapter.solucion.declase;
  * 
  * @version 1.0-clase
  */
-public class TarjetaAdapter extends TarjetaCredito implements ProductoBancario {
+public class TarjetaCuenta extends TarjetaCredito implements ProductoBancario {
 	
-	public TarjetaAdapter(String numero, double valor) {
+	public TarjetaCuenta(String numero, double valor) {
 		super(numero, valor);
 	}
 
