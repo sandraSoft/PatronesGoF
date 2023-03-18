@@ -1,4 +1,4 @@
-package builder.inicial;
+package fluentbuilder.inicial;
 
 import java.util.ArrayList;
 import java.util.List;

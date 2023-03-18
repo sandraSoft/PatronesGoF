@@ -1,17 +1,16 @@
-package builder.inicial;
+package fluentbuilder.solucion;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.Arrays;
-
 import org.junit.jupiter.api.Test;
 
 class AutoTest {
 
 	@Test
 	void crearAutoCompletoTest() {
-		Auto auto = new Auto("QWE-123","Renault Sandero","SUV","Litio",
-				5,250,3000,1200,Arrays.asList("GPS", "Bloqueo central"));
+		Auto auto = Auto.constructor("QWE-123","Renault Sandero").
+				tipo("SUV").tipoBateria("Litio").asientos(5).
+				potenciaMotor(250).largo(3000).ancho(1200).
+				extra("GPS").extra("Bloqueo central").crear();
 		
         assertEquals("QWE-123", auto.getPlaca());
         assertEquals("Renault Sandero", auto.getMarca());
@@ -26,7 +25,7 @@ class AutoTest {
 	
 	@Test
 	void crearAutoSoloObligatoriosTest() {
-		Auto auto = new Auto("THW-489","KIA Sport");
+		Auto auto = Auto.constructor("THW-489","KIA Sport").crear();
 		
         assertEquals("THW-489", auto.getPlaca());
         assertEquals("KIA Sport", auto.getMarca());
@@ -41,7 +40,8 @@ class AutoTest {
 	
 	@Test
 	void crearAutoPocosValoresTest() {
-		Auto auto = new Auto("RNY-829","Subaru Max","Hatchback",5,200);
+		Auto auto = Auto.constructor("RNY-829","Subaru Max").
+				tipo("Hatchback").asientos(5).potenciaMotor(200).crear();
 		
         assertEquals("RNY-829", auto.getPlaca());
         assertEquals("Subaru Max", auto.getMarca());
@@ -53,5 +53,5 @@ class AutoTest {
         assertEquals(0, auto.getAncho());
         assertEquals(0, auto.getExtras().size());
 	}
-
+	
 }

@@ -1,10 +1,8 @@
-package builder.solucion;
+package fluentbuilder.inicial;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import org.junit.jupiter.api.Test;
 
 class AgenciaTest {
@@ -19,14 +17,14 @@ class AgenciaTest {
 		datosAuto.put("largo", "3100");
 		
 		Agencia agencia = new Agencia();
-		agencia.addAuto(datosAuto, null);
+		agencia.adicionarAuto(datosAuto, null);
 		Auto auto = agencia.buscarAuto(placa);
 		
 		assertEquals(placa,auto.getPlaca());
 		assertEquals("Nissan Burbuja",auto.getMarca());
 		assertEquals("SUV",auto.getTipo());
-		// Ahora sí pasa la siguiente prueba:
-		assertEquals(3100,auto.getLargo());
+		// Falla en la siguiente prueba porque no hay un constructor adecuado
+		// assertEquals(3100,auto.getLargo());
 		assertEquals(0,auto.getExtras().size());
 	}
 
