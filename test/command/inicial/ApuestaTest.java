@@ -5,35 +5,37 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class ApuestaTest {
-	private static final String ESTADO_CANCELADA = "Estado = cancelada";
-	private static final String ESTADO_ACTIVA = "Estado = activa";
-	private static final String DINERO_INICIAL = "Dinero = $0.0"+System.lineSeparator();
+	private static final String CANCELADA = "cancelada";
+	private static final String ACTIVA = "activa";
 
 	@Test
 	void testIncrementarApuesta() {
 		Apuesta apuesta = new Apuesta();
-		assertEquals(DINERO_INICIAL+ESTADO_ACTIVA,apuesta.toString());
+		assertEquals(0,apuesta.getCantidadDinero());
+		assertEquals(ACTIVA,apuesta.getEstado());
 		apuesta.incrementar();
-		assertEquals("Dinero = $10000.0"+System.lineSeparator()+ESTADO_ACTIVA,
-				apuesta.toString());
+		assertEquals(10000,apuesta.getCantidadDinero());
+		assertEquals(ACTIVA,apuesta.getEstado());
 	}
 	
 	@Test
 	void testCancelarApuesta() {
 		Apuesta apuesta = new Apuesta();
-		assertEquals(DINERO_INICIAL+ESTADO_ACTIVA,apuesta.toString());
+		assertEquals(0,apuesta.getCantidadDinero());
+		assertEquals(ACTIVA,apuesta.getEstado());
 		apuesta.cancelar();
-		assertEquals(DINERO_INICIAL+ESTADO_CANCELADA,
-				apuesta.toString());
+		assertEquals(0,apuesta.getCantidadDinero());
+		assertEquals(CANCELADA,apuesta.getEstado());
 	}
 	
 	@Test
 	void testIncrementarApuestaCancelada() {
 		Apuesta apuesta = new Apuesta();
-		assertEquals(DINERO_INICIAL+ESTADO_ACTIVA,apuesta.toString());
+		assertEquals(0,apuesta.getCantidadDinero());
+		assertEquals(ACTIVA,apuesta.getEstado());
 		apuesta.cancelar();
 		apuesta.incrementar();
-		assertEquals(DINERO_INICIAL+ESTADO_CANCELADA,apuesta.toString());
+		assertEquals(0,apuesta.getCantidadDinero());
+		assertEquals(CANCELADA,apuesta.getEstado());
 	}
-
 }

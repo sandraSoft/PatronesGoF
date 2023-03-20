@@ -32,6 +32,14 @@ public class Apuesta {
 		this.cantidadDinero = 0;
 		this.estado = "cancelada";
 	}
+	
+	public double getCantidadDinero() {
+		return cantidadDinero;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
 
 	@Override
 	public String toString() {
