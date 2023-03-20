@@ -19,7 +19,7 @@ public class Cancelar implements Accion {
 
 	@Override
 	public void ejecutar() {
-		apuesta.cancelarApuesta();
+		apuesta.cancelar();
 		textArea.setText(apuesta.toString());
 	}
 

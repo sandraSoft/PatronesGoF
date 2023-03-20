@@ -73,7 +73,7 @@ public class Ventana extends JFrame {
 
 	private void accionBotonCancelar() {
 		btnCancelar.addActionListener(listener ->{
-			apuesta.cancelarApuesta(); 
+			apuesta.cancelar(); 
 			textArea.setText(apuesta.toString());
 		});
 	}

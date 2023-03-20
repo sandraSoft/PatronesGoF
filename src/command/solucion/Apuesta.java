@@ -28,7 +28,7 @@ public class Apuesta {
 	 * Al cancelar una apuesta se le reintegra el valor al apostador,
 	 * y ya no se puede seguir incrementando.
 	 */
-	public void cancelarApuesta() {
+	public void cancelar() {
 		this.cantidadDinero = 0;
 		this.estado = "cancelada";
 	}

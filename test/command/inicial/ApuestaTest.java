@@ -22,7 +22,7 @@ class ApuestaTest {
 	void testCancelarApuesta() {
 		Apuesta apuesta = new Apuesta();
 		assertEquals(DINERO_INICIAL+ESTADO_ACTIVA,apuesta.toString());
-		apuesta.cancelarApuesta();
+		apuesta.cancelar();
 		assertEquals(DINERO_INICIAL+ESTADO_CANCELADA,
 				apuesta.toString());
 	}
@@ -31,7 +31,7 @@ class ApuestaTest {
 	void testIncrementarApuestaCancelada() {
 		Apuesta apuesta = new Apuesta();
 		assertEquals(DINERO_INICIAL+ESTADO_ACTIVA,apuesta.toString());
-		apuesta.cancelarApuesta();
+		apuesta.cancelar();
 		apuesta.aumentarCantidad();
 		assertEquals(DINERO_INICIAL+ESTADO_CANCELADA,apuesta.toString());
 	}
