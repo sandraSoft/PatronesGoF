@@ -18,7 +18,7 @@ public class Apuesta {
 	/**
 	 * En el modo básico, una apuesta se incrementa en un valor fijo.
 	 */
-	public void aumentarCantidad() {
+	public void incrementar() {
 		if (!this.estado.equals("cancelada")) {
 			this.cantidadDinero += 10000;
 		}

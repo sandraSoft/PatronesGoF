@@ -66,7 +66,7 @@ public class Ventana extends JFrame {
 
 	private void accionBotonIncrementar() {
 		btnIncrementar.addActionListener(listener -> {
-			apuesta.aumentarCantidad();
+			apuesta.incrementar();
 			textArea.setText(apuesta.toString());
 		});
 	}

@@ -19,7 +19,7 @@ public class Incrementar implements Accion {
 
 	@Override
 	public void ejecutar() {
-		apuesta.aumentarCantidad();
+		apuesta.incrementar();
 		textArea.setText(apuesta.toString());
 	}
 
