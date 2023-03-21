@@ -1,4 +1,4 @@
-package command.solucion;
+package command.solucion2;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
@@ -37,4 +37,5 @@ class ApuestaTest {
 		assertEquals(0,apuesta.getCantidadDinero());
 		assertEquals(CANCELADA,apuesta.getEstado());
 	}
+
 }
