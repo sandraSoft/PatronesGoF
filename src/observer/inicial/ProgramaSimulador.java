@@ -9,17 +9,16 @@ public class ProgramaSimulador {
 
 	public static void main(String[] args) {
 		SensorVelocidad sensor = new SensorVelocidad();
-		VentanaColor ventanaColor = new VentanaColor();	
-		Mensaje mensaje = new Mensaje();
+		VentanaColor ventanaColor = new VentanaColor();		
 		
 		// Los objetos mensaje y ventanaColor se pasan al objeto velocidad
 		// para que los llamen cuando el valor de la velocidad cambie.
 		// Esto crea ALTO ACOPLAMIENTO.
-		sensor.setMensaje(mensaje);
+		sensor.setMensaje(new Mensaje());
 		sensor.setVentanaColor(ventanaColor);
 		
-		VentanaSimulaSensor ventanaTexto = new VentanaSimulaSensor(sensor);
+		VentanaSimulaSensor ventanaPruebas = new VentanaSimulaSensor(sensor);
 		ventanaColor.setVisible(true);
-		ventanaTexto.setVisible(true);
+		ventanaPruebas.setVisible(true);
 	}
 }
