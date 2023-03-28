@@ -1,7 +1,6 @@
 package observer.solucionapi;
 
-import java.util.Observable;
-import java.util.Observer;
+import java.beans.PropertyChangeListener;
 
 /**
 /**
@@ -13,17 +12,15 @@ import java.util.Observer;
 public class ProgramaSimulador {
 
 	public static void main(String[] args) {
-		Observable sensor = new SensorVelocidad();
-		Observer ventanaColor = new VentanaColor();
-		Observer mensaje = new Mensaje();
+		SensorVelocidad sensor = new SensorVelocidad();
+		PropertyChangeListener ventanaColor = new VentanaColor();
 		
 		// Se "suscriben" los interesados
 		// para que les avisen cuando cambie la velocidad
-		sensor.addObserver(mensaje);
-		sensor.addObserver(ventanaColor);
+		sensor.adicionarInteresadoSensor(new Mensaje());
+		sensor.adicionarInteresadoSensor(ventanaColor);
 		
-		VentanaSimulaSensor ventanaTexto = 
-				new VentanaSimulaSensor((SensorVelocidad)sensor);
+		VentanaSimulaSensor ventanaTexto = new VentanaSimulaSensor(sensor);
 		((VentanaColor)ventanaColor).setVisible(true);
 		ventanaTexto.setVisible(true);
 	}

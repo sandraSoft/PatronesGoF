@@ -15,6 +15,10 @@ public class SensorVelocidad extends Sensor {
 	public static final double VELOCIDAD_MEDIA = 35;
 	
 	private double velocidad;
+	
+	public SensorVelocidad() {
+		this.velocidad = 0;
+	}
 
 	/**
 	 * Cambia la velocidad y llama al método "notificar", 

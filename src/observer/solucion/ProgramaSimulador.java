@@ -11,11 +11,10 @@ public class ProgramaSimulador {
 	public static void main(String[] args) {
 		Sensor sensor = new SensorVelocidad();
 		ObservadorSensor ventanaColor = new VentanaColor();
-		ObservadorSensor mensaje = new Mensaje();
 		
 		// Se "suscriben" los interesados
 		// para que les avisen cuando cambie la velocidad
-		sensor.adicionarObservador(mensaje);
+		sensor.adicionarObservador(new Mensaje());
 		sensor.adicionarObservador(ventanaColor);
 
 		VentanaSimulaSensor ventanaTexto = 

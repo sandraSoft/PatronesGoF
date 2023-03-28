@@ -1,17 +1,17 @@
 package observer.solucionapi;
 
-import java.util.Observable;
-import java.util.Observer;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 /**
  * Muestra un mensaje cuando la velocidad de la bicicleta supera un límite.
  * 
- * Implementa la interfaz "Observer" (del API de Java)
- * por lo que tiene el rol de CONCRETE OBSERVER, del patrón Observer.
+ * Implementa la interfaz "PropertyChangeListener" (del API de Java)
+ * por lo que tiene el rol de CONCRETE OBSERVER (o Concrete Listener), del patrón Observer.
  * 
- * @version 2.5
+ * @version 3.0
  */
-public class Mensaje implements Observer {
+public class Mensaje implements PropertyChangeListener {
 	
 	/**
 	 * Muestra un mensaje si se supera el límite establecido.
@@ -26,10 +26,9 @@ public class Mensaje implements Observer {
 	}
 
 	@Override
-	public void update(Observable sensor, Object otroObjeto) {
-		if (sensor instanceof SensorVelocidad) {
-			double velocidad = ((SensorVelocidad)sensor).getVelocidad();
-			this.mostrar(velocidad);
-		}		
-	}
+	public void propertyChange(PropertyChangeEvent evento) {
+		double velocidad = (double)evento.getNewValue();
+		this.mostrar(velocidad);
+	}	
+		
 }

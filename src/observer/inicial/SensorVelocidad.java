@@ -16,6 +16,10 @@ public class SensorVelocidad {
 	private double velocidad;
 	private Mensaje mensaje;
 	private VentanaColor ventanaColor;
+	
+	public SensorVelocidad() {
+		this.velocidad = 0;
+	}
 
 	public double getVelocidad() {
 		return velocidad;

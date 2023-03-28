@@ -1,33 +1,48 @@
 package observer.solucionapi;
 
-import java.util.Observable;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
 /**
  * Clase que simula un sensor de velocidad de una bicicleta.
  * 
- * Es hija de Observable (del API de Java), por lo que es
- * un Observable concreto (CONCRETE SUBJECT) del patrón Observer. 
+ * Usa un "PropertyChangeSupport" (del API de Java), para notificar.
+ * Tiene el rol de SUBJECT (o Concrete Subject) del patrón Observer. 
  * 
- * @version 2.5
+ * @version 3.0
  */
-public class SensorVelocidad extends Observable {
-	static final double VELOCIDAD_ALTA = 50;
-	static final double VELOCIDAD_MEDIA = 35;
+public class SensorVelocidad {
+	public static final double VELOCIDAD_ALTA = 50;
+	public static final double VELOCIDAD_MEDIA = 35;
 	
 	private double velocidad;
+	
+	private PropertyChangeSupport publicador;
+	
+	public SensorVelocidad() {
+		this.velocidad = 0 ;
+		publicador = new PropertyChangeSupport(this);
+	}
+	
+	public void adicionarInteresadoSensor(PropertyChangeListener interesado) {
+		publicador.addPropertyChangeListener(interesado);
+	}
+	
+	public void eliminarInteresadoSensor(PropertyChangeListener interesado) {
+		publicador.removePropertyChangeListener(interesado);
+	}
 
 	/**
-	 * Cambia la velocidad y llama al método "notifyObservers", 
+	 * Cambia la velocidad y llama al método "firePropertyChange", 
 	 * para que los interesados se actualicen (parte del patrón Observer).
 	 * 
 	 * @param velocidad el nuevo valor de la velocidad (en Km/h)
 	 */
-	public void setVelocidad(double velocidad) {
-		this.velocidad = velocidad;
-		
+	public void setVelocidad(double velocidad) {		
 		// informar a los observadores
-		this.setChanged();
-		this.notifyObservers();
+		publicador.firePropertyChange("velocidad",this.velocidad, velocidad);
+		
+		this.velocidad = velocidad;
 	}
 
 	public double getVelocidad() {

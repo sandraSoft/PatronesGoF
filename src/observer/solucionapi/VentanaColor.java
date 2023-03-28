@@ -2,28 +2,29 @@ package observer.solucionapi;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 import java.awt.Color;
-import java.util.Observable;
-import java.util.Observer;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 /**
  * Ventana sencilla para mostrar un color,
  *  dependiendo de la velocidad de la bicicleta.
  * 
- * Implementa la interfaz "Observer" (del API de Java), por lo que tiene
- * el rol de CONCRETE OBSERVER, del patrón Observer
+ * Implementa la interfaz "PropertyChangeListener" (del API de Java)
+ * por lo que tiene el rol de CONCRETE OBSERVER (o Concrete Listener), del patrón Observer.
  * 
- * @version 2.5
+ * @version 3.0
  */
-public class VentanaColor extends JFrame implements Observer {
+public class VentanaColor extends JFrame implements PropertyChangeListener {
 	private JLabel recuadroColor; 
 
 	public VentanaColor() {
 		setTitle("Velocidad bicicleta:");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 250, 445, 131);
 		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -44,30 +45,24 @@ public class VentanaColor extends JFrame implements Observer {
 	 * para advertir si el valor está dentro de unos rangos aceptables o no.
 	 * Verde: velocidad baja, Amarillo: aceptable (medio), Rojo: muy rápido 
 	 * 
-	 * @param sensor el sensor de velocidad de la bicicleta,
-	 *		para poder obtener la velocidad y cambiar de color.
+	 * @param velocidad la velocidad de la bicicleta (en Km/h), 
+	 * 					para saber el color que mostrará
 	 */
-	public void actualizarColor(SensorVelocidad sensor) {
-		double velocidadBicicleta = sensor.getVelocidad();
-		if (velocidadBicicleta < SensorVelocidad.VELOCIDAD_MEDIA) {
+	public void actualizarColor(double velocidad) {
+		if (velocidad < SensorVelocidad.VELOCIDAD_MEDIA) {
 			recuadroColor.setBackground(Color.GREEN);
 			return;
 		}
-		if (velocidadBicicleta <= SensorVelocidad.VELOCIDAD_ALTA) {
+		if (velocidad <= SensorVelocidad.VELOCIDAD_ALTA) {
 			recuadroColor.setBackground(Color.YELLOW);
 			return;
 		}
 		recuadroColor.setBackground(Color.RED);
 	}
 
-	/**
-	 * Método que es llamado cuando el observable cambia
-	 * (en este caso, cuando la velocidad cambia)
-	 */
 	@Override
-	public void update(Observable sensor, Object otroObjeto) {
-		if (sensor instanceof SensorVelocidad) {
-			this.actualizarColor((SensorVelocidad)sensor);
-		}
+	public void propertyChange(PropertyChangeEvent evento) {
+		double velocidad = (double)evento.getNewValue();
+		this.actualizarColor(velocidad);
 	}
 }
