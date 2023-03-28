@@ -11,8 +11,8 @@ package observer.solucion;
  * @version 2.0
  */
 public class SensorVelocidad extends Sensor {
-	static final double VELOCIDAD_ALTA = 50;
-	static final double VELOCIDAD_MEDIA = 35;
+	public static final double VELOCIDAD_ALTA = 50;
+	public static final double VELOCIDAD_MEDIA = 35;
 	
 	private double velocidad;
 

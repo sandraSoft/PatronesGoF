@@ -16,7 +16,7 @@ import java.awt.Color;
  * 
  * @version 2.0
  */
-public class VentanaColor extends JFrame implements ObserverSensor {
+public class VentanaColor extends JFrame implements ObservadorSensor {
 	private JLabel recuadroColor; 
 
 	public VentanaColor() {

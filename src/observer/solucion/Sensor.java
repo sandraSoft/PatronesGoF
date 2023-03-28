@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Representa un dato que es medido u obtenido por un sensor
- * y es OBSERVADO por otros que están interesados en tomar acciones
+ * y es "observado" por otros que están interesados en tomar acciones
  * cuando cambia el valor.
  *
  * Representa el rol SUBJECT (Observable) en el patrón Observer:
@@ -14,17 +14,17 @@ import java.util.List;
  * @version 1.0
  */
 public class Sensor {
-	private List<ObserverSensor> observadores;
+	private List<ObservadorSensor> observadores;
 	
 	public Sensor() {
 		this.observadores = new ArrayList<>();
 	}
 	
-	public void adidicionarObservador(ObserverSensor observer) {
+	public void adicionarObservador(ObservadorSensor observer) {
 		observadores.add(observer);
 	}
 	
-	public void eliminarObservador(ObserverSensor observer) {
+	public void eliminarObservador(ObservadorSensor observer) {
 		observadores.remove(observer);
 	}
 	

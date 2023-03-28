@@ -10,8 +10,8 @@ package observer.inicial;
  * @version 1.0
  */
 public class SensorVelocidad {
-	static final double VELOCIDAD_ALTA = 50;
-	static final double VELOCIDAD_MEDIA = 35;
+	public static final double VELOCIDAD_ALTA = 50;
+	public static final double VELOCIDAD_MEDIA = 35;
 
 	private double velocidad;
 	private Mensaje mensaje;

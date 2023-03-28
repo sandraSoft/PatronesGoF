@@ -8,7 +8,7 @@ package observer.solucion;
  * 
  * @version 2.0
  */
-public class Mensaje implements ObserverSensor {
+public class Mensaje implements ObservadorSensor {
 	
 	/**
 	 * Muestra un mensaje si se supera el límite establecido.
