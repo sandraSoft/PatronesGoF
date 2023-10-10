@@ -4,11 +4,11 @@ package adapter.solucion.deobjeto;
  * Comportamiento de cualquier producto de un banco del cual se pueda retirar dinero,
  * Como por ejemplo Cuentas o Tarjetas.
  * 
- * CORRESPONDE AL ROL "Target" (o "Client Interface") DEL PATRÓN ADAPTER.
+ * CORRESPONDE AL ROL "Target" DEL PATRÓN ADAPTER.
  * 
- * @version 1.0
+ * @version 1.1
  */
-public interface ProductoBancario {
+public interface IProductoBancario {
 	
 	/**
 	 * Disminuir el valor o total de dinero del producto.

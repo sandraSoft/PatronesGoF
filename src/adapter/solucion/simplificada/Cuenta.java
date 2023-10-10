@@ -1,14 +1,13 @@
-package adapter.solucion.deobjeto;
+package adapter.solucion.simplificada;
 
 /**
  * Una cuenta bancaria de la cual se pueden hacer retiros de dinero.
  * 
- * IMPLEMENTA LA INTERFAZ "ProductoBancario", PARA QUE EL BANCO
- * PUEDA USAR TODOS LOS PRODUCTOS DE LA MISMA FORMA
+ * CORRESPONDE AL ROL "Target" DEL PATRÓN ADAPTER.
  * 
- * @version 1.2
+ * @version 1.0
  */
-public class Cuenta implements IProductoBancario {
+public class Cuenta {
 	
 	private String numero;
 	private double saldo;
@@ -26,7 +25,13 @@ public class Cuenta implements IProductoBancario {
 		return saldo;
 	}
 	
-	@Override
+	/**
+	 * Retirar (sacar) dinero de la cuenta, disminuyendo el saldo.
+	 * 
+	 * @param cantidad la cantidad de dinero que se desea sacar de la cuenta
+	 * @return	un valor booleano indicado si se pudo retirar porque la cantidad
+	 * 			era menor o igual al saldo de la cuenta. 
+	 */
 	public boolean retirar(double cantidad) {
 		if (cantidad <=0 || cantidad > saldo) {
 			return false;

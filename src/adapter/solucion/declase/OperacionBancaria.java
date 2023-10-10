@@ -16,7 +16,7 @@ public class OperacionBancaria {
 	 * @return si se pudo realizar la operación 
 	 * 		(por que la cantidad era mayor a cero y menor al saldo).
 	 */
-	public boolean realizarRetiro(ProductoBancario producto, double cantidad) {
+	public boolean realizarRetiro(IProductoBancario producto, double cantidad) {
 		return producto.retirar(cantidad);
 	}
 }

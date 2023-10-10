@@ -1,21 +1,24 @@
-package adapter.solucion.deobjeto;
+package adapter.solucion.simplificada;
 
 /**
  * Permite adaptar el comportamiento de una Tarjeta de Crédito a lo que 
- * se tiene en la interfaz "ProductoBancario".
+ * se tiene en la clase "Cuenta"
  * 
  * CORRESPONDE AL ROL "Adapter" DEL PATRÓN ADAPTER (Adapter de Objeto):
  * Tiene un atributo de tipo "TarjetaCredito".
  * 
- * Es más flexible porque, si es necesario, puede adaptar otros productos.
+ * Al heredar de Cuenta tiene toda la estructura de esa clase,
+ * incluso atributos y métodos que no requiere para hacer la adaptación.
  * 
- * @version 1.0-objeto
+ * @version 1.0-objeto-simple
  */
-public class TarjetaCuenta implements IProductoBancario {
+public class TarjetaCuenta extends Cuenta {
 	
 	private TarjetaCredito tarjeta;
 
 	public TarjetaCuenta(TarjetaCredito tarjeta) {
+		//Debe llamar al constructor de la clase padre
+		super(tarjeta.getNumero(), tarjeta.getValor());  
 		this.tarjeta = tarjeta;
 	}
 

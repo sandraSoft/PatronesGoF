@@ -8,7 +8,7 @@ package adapter.solucion.declase;
  * 
  * @version 1.2
  */
-public class Cuenta implements ProductoBancario {
+public class Cuenta implements IProductoBancario {
 	
 	private String numero;
 	private double saldo;
