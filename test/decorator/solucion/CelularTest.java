@@ -1,4 +1,4 @@
-package decorator.solucionoriginal;
+package decorator.solucion;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,28 +14,28 @@ class CelularTest {
 	
 	@Test
 	void testCelularBase() {
-		Celular celular = new CelularBase("moto",256);
+		ICelular celular = new CelularBase("moto",256);
 		double precioEsperado = 807200;
 		assertEquals(precioEsperado,celular.calcularPrecio());
 	}
 	
 	@Test
 	void testCelularUsado() {
-		Celular celularUsado = new Usado(new CelularBase("moto",256));
+		ICelular celularUsado = new Usado(new CelularBase("moto",256));
 		double precioEsperado = 403600;
 		assertEquals(precioEsperado,celularUsado.calcularPrecio(),0.001);
 	}
 	
 	@Test
 	void testCelularConCamara() {
-		Celular celularCamara = new ConCamara(new CelularBase("moto",256));
+		ICelular celularCamara = new ConCamara(new CelularBase("moto",256));
 		double precioEsperado = 968640;
 		assertEquals(precioEsperado,celularCamara.calcularPrecio());
 	}
 	
 	@Test
 	void testCelularUsadoConCamara() {
-		Celular celularCamara = new ConCamara(new Usado(new CelularBase("moto",256)));
+		ICelular celularCamara = new ConCamara(new Usado(new CelularBase("moto",256)));
 		double precioEsperado = 484320;
 		assertEquals(precioEsperado,celularCamara.calcularPrecio());
 	}

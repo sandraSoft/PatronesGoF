@@ -1,4 +1,4 @@
-package decorator.solucionoriginal;
+package decorator.solucion;
 
 /**
  * Un tipo de adición o característica de un celular.
@@ -7,14 +7,14 @@ package decorator.solucionoriginal;
  * 
  * @version 1.0
  */
-public class ConCamara extends Adicional {
+public class Usado extends Adicional {
 
-	public ConCamara(Celular base) {
+	public Usado(ICelular base) {
 		super(base);
 	}
 	
 	@Override
 	public double calcularPrecio() {
-		return (super.calcularPrecio() * 1.2);
+		return (super.calcularPrecio() * 0.5);
 	}
 }

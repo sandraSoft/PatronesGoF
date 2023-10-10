@@ -1,4 +1,4 @@
-package decorator.solucionoriginal;
+package decorator.solucion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,13 +10,13 @@ import java.util.List;
  * @version 1.0
  */
 public class Catalogo {
-	private List<Celular> celulares;
+	private List<ICelular> celulares;
 	
 	public Catalogo() {
 		this.celulares = new ArrayList<>();
 	}
 	
-	public void adicionarCelular(Celular celular) {
+	public void adicionarCelular(ICelular celular) {
 		celulares.add(celular);
 	}
 	
@@ -26,7 +26,7 @@ public class Catalogo {
 	 */
 	public double getPrecioTotalCatalogo() {
 		double precioTotal = 0;
-		for (Celular celular : celulares) {
+		for (ICelular celular : celulares) {
 			precioTotal += celular.calcularPrecio();
 		}
 		return precioTotal;

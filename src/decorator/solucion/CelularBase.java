@@ -1,4 +1,4 @@
-package decorator.solucionoriginal;
+package decorator.solucion;
 
 /**
  * Corresponde al celular base (que era el que estaba originalmente),
@@ -7,7 +7,7 @@ package decorator.solucionoriginal;
  * 
  * @version 1.5
  */
-public class CelularBase implements Celular {
+public class CelularBase implements ICelular {
 	
 	private String modelo;
 	private int memoria;

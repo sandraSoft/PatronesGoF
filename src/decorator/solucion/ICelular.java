@@ -1,4 +1,4 @@
-package decorator.solucionoriginal;
+package decorator.solucion;
 
 /**
  * Dispositivo para comunicación y manejo de aplicaciones.
@@ -9,13 +9,13 @@ package decorator.solucionoriginal;
  * 
  * @version 2.0
  */
-public interface Celular {
+public interface ICelular {
 	
 	/**
 	 * El precio depende de varios factores, pues las 
 	 * características adicionales pueden cambiarlo.
 	 * 
-	 * @return el precio en pesos.
+	 * @return el precio, en pesos colombianos.
 	 */
 	public abstract double calcularPrecio();
 

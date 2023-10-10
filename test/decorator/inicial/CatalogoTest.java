@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Pruebas para calcular el valor total del catálogo con varios celulares.
  * 
- * @version 1.0
+ * @version 1.1
  */
 class CatalogoTest {
 
@@ -19,7 +19,7 @@ class CatalogoTest {
 	}
 	
 	@Test
-	void testCatalogoCelularesBase() {
+	void testCatalogoVariosCelulares() {
 		Catalogo catalogo = new Catalogo();
 		catalogo.adicionarCelular(new Celular("LG",256));
 		catalogo.adicionarCelular(new Celular("Moto",256));

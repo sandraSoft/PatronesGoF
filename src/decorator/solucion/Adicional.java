@@ -1,4 +1,4 @@
-package decorator.solucionoriginal;
+package decorator.solucion;
 
 /**
  * Permite extender las características de un celular base.
@@ -6,11 +6,11 @@ package decorator.solucionoriginal;
  * 
  * @version 1.0
  */
-public abstract class Adicional implements Celular {
+public abstract class Adicional implements ICelular {
 	
-	private Celular base;
+	private ICelular base;
 	
-	Adicional(Celular base) {
+	public Adicional(ICelular base) {
 		this.base = base;
 	}
 	

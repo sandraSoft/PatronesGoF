@@ -11,6 +11,7 @@ public class CelularAdicion extends Celular {
 	private Celular base;
 	
 	public CelularAdicion(Celular base) {
+		// Debe llamar al constructor de la clase padre
 		super(base.getModelo(), base.getMemoria());
 		this.base = base;
 	}
