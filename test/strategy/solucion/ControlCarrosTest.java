@@ -1,14 +1,14 @@
-package strategy.inicial;
+package strategy.solucion;
 
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 class ControlCarrosTest {
 
 	@Test
 	void testArchivoInexistente_CreaListaVacia() {
-		ControlCarros control = new ControlCarros();
+		ControlCarros control = new ControlCarros(new ConvertidorJson());
 		control.obtenerDatosCarros("INEXISTENTE");
 		List<Carro> carros = control.getCarros();
 		assertEquals(0, carros.size());
@@ -16,7 +16,7 @@ class ControlCarrosTest {
 	
 	@Test
 	void testFormatoIncorrecto_CreaListaVacia() {
-		ControlCarros control = new ControlCarros();
+		ControlCarros control = new ControlCarros(new ConvertidorJson());
 		control.obtenerDatosCarros("CarrosIncorrecto.json");
 		List<Carro> carros = control.getCarros();
 		assertEquals(0, carros.size());
@@ -24,7 +24,7 @@ class ControlCarrosTest {
 	
 	@Test
 	void testArchivoJson_CreaListaCarros() {
-		ControlCarros control = new ControlCarros();
+		ControlCarros control = new ControlCarros(new ConvertidorJson());
 		control.obtenerDatosCarros("Carros.json");
 		List<Carro> carros = control.getCarros();
 		String resultadoEsperado = "[[placa=QUX-346, modelo=2020], [placa=HFY-974, modelo=2019]]";
@@ -32,4 +32,5 @@ class ControlCarrosTest {
 		assertEquals(2, carros.size());
 		assertEquals(resultadoEsperado, carros.toString());
 	}
+
 }

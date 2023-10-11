@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -43,15 +44,20 @@ public class ControlCarros {
 	 * A partir de un texto, que corresponde a un arreglo de objetos JSON,
 	 * se obtienen los datos de carros para crearlos
 	 * y guardarlos en la colección.
+	 * Si el texto no tiene el formato correcto, no se realiza ninguna acción.
 	 * 
 	 * @param texto  un arreglo JSON con datos de varios carros.
 	 */
 	private void crearListaCarros(String texto) {
-		JSONArray arregloJson = new JSONArray(texto);
-		for (int i = 0; i < arregloJson.length(); i++) {
-			JSONObject objetoJson = arregloJson.getJSONObject(i);
-			Carro carro = crearCarro(objetoJson.toString());
-			carros.add(carro);
+		try {
+			JSONArray arregloJson = new JSONArray(texto);
+			for (int i = 0; i < arregloJson.length(); i++) {
+				JSONObject objetoJson = arregloJson.getJSONObject(i);
+				Carro carro = crearCarro(objetoJson.toString());
+				carros.add(carro);
+			}
+		} catch (JSONException formatoIncorrecto) {
+			// En blanco a propósito. No se crean carros.
 		}
 	}
 	
