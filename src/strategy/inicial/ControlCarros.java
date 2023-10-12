@@ -57,7 +57,7 @@ public class ControlCarros {
 				carros.add(carro);
 			}
 		} catch (JSONException formatoIncorrecto) {
-			// En blanco a propósito. No se crean carros.
+			// En blanco a propósito. Si el formato es incorrecto, no se crean carros.
 		}
 	}
 	
