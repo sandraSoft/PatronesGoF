@@ -10,7 +10,7 @@ class ControlCarrosTest {
 	public ControlCarrosTest() {
 		// ESCRIBIR LA RUTA DE LA CARPETA DONDE ESTÁN LOS ARCHIVOS DE PRUEBA.
 		// POR EJEMPLO: C:\\UCaldas\\IngSw\\Patrones\\
-		this.carpeta = "";
+		this.carpeta = ".\\resources\\";
 	}
 	
 	@Test

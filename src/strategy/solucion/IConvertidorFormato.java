@@ -6,6 +6,8 @@ import java.util.List;
  * Métodos para "convertir" un texto con datos de carros en 
  * una lista de objetos Carro.
  * 
+ * Corresponde al rol STRATEGY del patrón del mismo nombre.
+ * 
  * @version 1.0
  */
 public interface IConvertidorFormato {

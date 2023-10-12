@@ -7,7 +7,9 @@ import java.util.List;
  * Clase que obtiene datos de un archivo para
  * crear una lista de carros.
  * 
- * @version 1.0
+ * Corresponde al rol CONTEXT en el patrón Strategy.
+ * 
+ * @version 2.0
  */
 public class ControlCarros {
 	private List<Carro> carros;

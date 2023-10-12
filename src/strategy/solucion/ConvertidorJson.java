@@ -11,6 +11,8 @@ import org.json.JSONObject;
  * Permite convertir datos de carros que están en formato JSON
  * a sus correspondientes objetos "Carro" en Java.
  * 
+ * Corresponde al rol CONCRETE STRATEGY.
+ * 
  * @version 1.0
  */
 public class ConvertidorJson implements IConvertidorFormato {

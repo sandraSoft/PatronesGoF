@@ -8,6 +8,8 @@ import java.util.List;
  * Permite convertir datos de carros que están en formato CSV
  * a sus correspondientes objetos "Carro" en Java.
  * 
+ * Corresponde al rol CONCRETE STRATEGY.
+ * 
  * @version 1.0
  */
 public class ConvertidorCsv implements IConvertidorFormato {
