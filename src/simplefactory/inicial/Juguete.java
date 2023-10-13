@@ -1,18 +1,23 @@
 package simplefactory.inicial;
 
 /**
- * Juguete para bebé, que tiene diferentes hijas para los
- * diferentes juguetes que se deseen.
+ * Juguete que puede ser de diferentes tipos.
  * 
- * @version 1.0
+ * @version 2.0
  */
 public abstract class Juguete {
+	private String nombre;
 	private double precioBase;
 	private double volumen;
 	
-	public Juguete(double precioBase, double volumen) {
+	public Juguete(String nombre, double precioBase, double volumen) {
+		this.nombre = nombre;
 		this.precioBase = precioBase;
 		this.volumen = volumen;
+	}
+	
+	public String getNombre() {
+		return nombre;
 	}
 	
 	public double getVolumen() {
@@ -24,7 +29,7 @@ public abstract class Juguete {
 	}
 	
 	/**
-	 * Calcula el precio total del juguete, incluyendo el precio del empaque.
+	 * Calcula el precio total del juguete, con cargos e impuestos.
 	 * @return el precio total, en pesos colombianos. 
 	 */
 	public abstract double getPrecioTotal();

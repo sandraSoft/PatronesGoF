@@ -1,19 +1,17 @@
 package simplefactory.inicial;
 
 /**
- * Balón de colores para bebé.
+ * Balón de colores y exterior suave.
  *  
- * @version 1.0
+ * @version 1.5
  */
 public class Balon extends Juguete {
-
-	public Balon(double precioBase, double volumen) {
-		super(precioBase,volumen);
+	public Balon(String nombre, double precioBase, double volumen) {
+		super(nombre, precioBase, volumen);
 	}
 
 	@Override
 	public double getPrecioTotal() {
 		return getPrecioBase() + getVolumen()*50;
-
 	}
 }
