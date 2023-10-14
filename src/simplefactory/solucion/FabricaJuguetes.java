@@ -14,16 +14,16 @@ public class FabricaJuguetes {
 	/**
 	 * ESTE METODO CAMBIA SI APARECE UN NUEVO JUGUETE,
 	 * PERO LA VENTAJA ES QUE ES SU ÚNICA RESPONSABILIDAD
-	 * Y ESTA EN UNA CLASE EXCLUSIVA PARA ESTA FUNCIÓN
+	 * Y ESTA EN UNA CLASE EXCLUSIVA PARA ESTA FUNCIÓN.
 	 */
-	public static Juguete crearJuguete(double precioBase, double volumen, char tipo) {
-		switch (tipo) {
-			case 'p': 
-				return new Peluche(precioBase, volumen);
-			case 'b':
-				return new Balon(precioBase, volumen);
-			default:
-				throw new IllegalArgumentException();
-		}
+	public static Juguete crearJuguete(
+			String nombre, double precioBase, double volumen, char tipo) {
+		
+		return switch (tipo) {
+			case 'm'-> new Muneco(nombre,precioBase, volumen);
+			case 'b'-> new Balon(nombre,precioBase, volumen);
+			case 't'-> new Tren(nombre,precioBase, volumen);				
+			default-> throw new IllegalArgumentException("Tipo de juguete no soportado");
+		};
 	}
 }

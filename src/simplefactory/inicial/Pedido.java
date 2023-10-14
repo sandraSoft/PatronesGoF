@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Permite obtener los datos de un pedido de un juguete,
+ * Guarda los datos de un pedido de juguetes,
  * especialmente el precio, necesario para el área de Mercadeo.
  * 
  * ESTA CLASE DEBE CREAR CADA JUGUETE (más responsabilidad),

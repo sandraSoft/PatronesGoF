@@ -3,12 +3,6 @@ package simplefactory.inicial;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-/**
- * Realiza pruebas del método "calcularPrecio" de la clase Pedido
- *  (para esto debe primero adicionar juguetes)
- * 
- * @version 1.0
- */
 class PedidoTest {
 	@Test
 	void calcularPrecioBalonTest() {
